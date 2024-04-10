@@ -1,0 +1,17 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "teting electron with CB integration",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "nodemon --exec electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "cbh",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^29.2.0",
+    "nodemon": "^3.1.0"
+  }
+}
