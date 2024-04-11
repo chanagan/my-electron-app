@@ -1,27 +1,50 @@
-const {app, BrowserWindow} = require('electron')   
-const path = require('path')     
+const {app, BrowserWindow, dialog, ipcMain, Menu} = require('electron')   
+const path = require('path')    
+
+// const request = require('request')
+
+const users = [{accountName: 'chris'}, {accountName: 'joe'}]
+
+async function handleFileOpen() {
+    const {canceled, filePaths} = await dialog.showOpenDialog({})
+        if (!canceled) {
+            return filePaths[0]
+        }
+
+    }
 
 const createWindow = () => {
     const win = new BrowserWindow({
-        width: 800,
+        width: 1200,
         height: 600,
+        x: 0,
+        y: 0,
         webPreferences: {
             nodeIntegration: true,
             preload: path.join(__dirname, 'preload.js') 
         }
     })
     win.loadFile('index.html')
+    ipcMain.on('set-title', (event, title) => {
+        win.setTitle(title)
+    })
 
     win.webContents.openDevTools()
 }
 
-app.whenReady().then(createWindow).then(() => {
+app.whenReady().then(() => {
+    ipcMain.handle('dialog:openFile', handleFileOpen)
+    ipcMain.handle('get-json', getJson)
     createWindow()
+
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) {
             createWindow()
         }
     })
+
+    const mainMenu = Menu.buildFromTemplate(mainMenuTemplate)
+    Menu.setApplicationMenu(mainMenu)
 })
 
 app.on('window-all-closed', () => {
@@ -30,3 +53,93 @@ app.on('window-all-closed', () => {
     }
 })
 
+const mainMenuTemplate = [
+    {
+        label: 'File',
+        submenu: [
+            {
+                label: 'Add Item'
+            },
+            {
+                label: 'Clear All Items'
+            },
+            
+            {
+                label: 'Quit',
+                accelerator: process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
+                click() {
+                    app.quit()
+                }
+            }
+        ]
+    }
+]
+
+// stuff for cloud beds
+/*
+    This file is used to make an API call to the Cloudbeds API.
+https://apidog.com/articles/call-rest-api-node-js/#why-use-nodejs-for-calling-rest-apis
+
+    */
+let jsonResp = data = '';
+let objLength = 0;
+async function getJson() {
+    console.log('getting JSON')
+    const options = {
+        type: 'info',
+        title: 'Information',
+        message: "Do you want to download the JSON file?",
+        buttons: ['Yes', 'No']
+    }
+    const response = await dialog.showMessageBox(null, options)
+    if (response.response === 0) {
+        return jsonResp
+    }
+}
+
+const https = require('https');
+// const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+
+const options = {
+  hostname: 'hotels.cloudbeds.com',
+  // path: '/api/v1.1/getDashboard',
+  path: '/api/v1.1/getHouseAccountList',
+  // path: '/api/v1.1/getPaymentMethods',
+  method: 'GET',
+  headers: {
+    'x-api-key': 'cbat_06UfnnHdzSwoncUCh7ZOHkLiv02ZqUqc',
+  },
+};
+
+const getPosts = () => {
+
+  
+  const request = https.request(options, (response) => {
+    response.setEncoding('utf8');
+
+    response.on('data', (chunk) => {
+        console.log('------------------') 
+      data += chunk;
+    });
+
+    response.on('end', () => {
+        // console.log(Object.keys(data.data[0]));
+      jsonResp = JSON.parse(data)
+      console.log(jsonResp.success)
+      objLength = Object(jsonResp.data).length;
+      console.log(objLength)
+      console.log(jsonResp.data[1].accountName)
+               });
+  });
+
+  request.on('error', (error) => {
+    console.error(error);
+  });
+
+  request.end();
+
+   
+};
+
+
+getPosts();

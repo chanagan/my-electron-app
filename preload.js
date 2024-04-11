@@ -1,14 +1,15 @@
-window.addEventListener('DOMContentLoaded', () => {
-    const replaceText = (selector, text) => {
-        const element = document.getElementById(selector)
-        if (element) element.innerText = text
-    }
-    for (const type of ['chrome', 'node', 'electron']) {
-        replaceText(`${type}-version`, process.versions[type])
-    }
+const { contextBridge, ipcRenderer } = require('electron')
 
-    // for(const dependency of ['electron', 'node', 'v8']) {
-    //     replaceText(`${dependency}-version`, process.versions[dependency])
-    // }
-
+contextBridge.exposeInMainWorld('versions', {
+  node: () => process.versions.node,
+  chrome: () => process.versions.chrome,
+  electron: () => process.versions.electron
+  // we can also expose variables, not just functions
 })
+
+contextBridge.exposeInMainWorld('electronAPI', {
+    openFile: () => ipcRenderer.invoke('dialog:openFile'),
+    getJSON: () => ipcRenderer.invoke('get-json'),
+    setTitle: (title) => ipcRenderer.send('set-title', title)
+})
+
