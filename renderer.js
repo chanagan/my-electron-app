@@ -11,8 +11,39 @@ btncb.addEventListener('click', async () => {
     console.log('getting JSON')
     const jsonResp = await window.electronAPI.getJSON()
     console.log(jsonResp)
-    console.log(Object.keys(jsonResp.data[0]))
-    // filePathElement.innerText = filePath
+
+    const tblData = jsonResp.data
+    const cbRes = document.getElementById('cb')
+
+    // how many rows
+    const rowCnt = tblData.length
+    // how many columns
+    const colCnt = Object.keys(tblData[0]).length
+    console.log('rows: ' + rowCnt + ' -- ' + 'cols: ' + colCnt)
+
+    let newTable = "<table border='1'>"
+    // make the header row
+    newTable += "<tr>"
+    Object.keys(tblData[0]).forEach(key => {
+        newTable += `<th>${key}</th>`
+    })
+    newTable += '</tr>'
+
+    // fill in the rest of the table    
+    for (let i = 0; i < rowCnt; i++) {
+        newTable += '<tr>'
+    //     newTable += `<tr><td>${i}</td><td>${tblData[i].value}</td></tr>`
+        Object.keys(tblData[i]).forEach(key => {
+            newTable += `<td>${tblData[i][key]}</td>`
+            // console.log('tr row -> ' + key, jsonResp.data[i][key])
+        })
+        newTable += '</tr>'
+    }
+    
+    newTable += '</table>'
+
+    cbRes.innerHTML = newTable
+
 })
 
 btn.addEventListener('click', async () => {
