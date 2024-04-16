@@ -1,5 +1,6 @@
 const {app, BrowserWindow, dialog, ipcMain, Menu} = require('electron')   
-const path = require('path')    
+const path = require('path')   
+const fs = require('fs') 
 
 // const request = require('request')
 
@@ -12,9 +13,9 @@ async function handleFileOpen() {
         }
 
     }
-
+let win
 const createWindow = () => {
-    const win = new BrowserWindow({
+    win = new BrowserWindow({
         width: 1200,
         height: 600,
         x: 0,

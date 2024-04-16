@@ -4,3 +4,11 @@ https://stackoverflow.com/questions/52003764/nodejs-electron-how-to-wait-for-fun
 the above link is for the ipcMain and ipcRenderer communication
 -------
 https://github.com/reZach/secure-electron-template/blob/master/docs/newtoelectron.md
+-----------
+
+4/16
+---
+may be useful for coms and additional windows
+
+https://stackoverflow.com/questions/72372319/electronjs-how-to-get-data-across-from-preload-to-renderer
+
