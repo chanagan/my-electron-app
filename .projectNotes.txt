@@ -11,4 +11,12 @@ https://github.com/reZach/secure-electron-template/blob/master/docs/newtoelectro
 may be useful for coms and additional windows
 
 https://stackoverflow.com/questions/72372319/electronjs-how-to-get-data-across-from-preload-to-renderer
+--- 
 
+complete JS menu tutorial
+https://www.youtube.com/watch?v=4aIanHYViOM
+-----
+
+electron tutorial
+https://www.youtube.com/results?search_query=electron+open+file+tutorial+in+vscode
+-----
