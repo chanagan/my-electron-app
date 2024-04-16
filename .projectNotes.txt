@@ -3,3 +3,4 @@
 https://stackoverflow.com/questions/52003764/nodejs-electron-how-to-wait-for-function-to-finish-before-ipcmain-send-back-hi
 the above link is for the ipcMain and ipcRenderer communication
 -------
+https://github.com/reZach/secure-electron-template/blob/master/docs/newtoelectron.md
