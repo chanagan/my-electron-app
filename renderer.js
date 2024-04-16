@@ -3,7 +3,7 @@ const information = document.getElementById('info')
 const setButton = document.getElementById('btn')
 const filePathElement = document.getElementById('filePath')
 
-const btn = document.getElementById('btn2')
+const btnFile = document.getElementById('fileBtn')
 
 const titleInput = document.getElementById('title')
 
@@ -46,7 +46,7 @@ btncb.addEventListener('click', async () => {
 
 })
 
-btn.addEventListener('click', async () => {
+btnFile.addEventListener('click', async () => {
     console.log('opening file')
     const filePath = await window.electronAPI.openFile()
     filePathElement.innerText = filePath
