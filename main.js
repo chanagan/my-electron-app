@@ -53,28 +53,15 @@ app.on('window-all-closed', () => {
         app.quit()
     }
 })
-
-const mainMenuTemplate = [
-    {
-        label: 'File',
-        submenu: [
-            {
-                label: 'Add Item'
-            },
-            {
-                label: 'Clear All Items'
-            },
-            
-            {
-                label: 'Quit',
-                accelerator: process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
-                click() {
-                    app.quit()
-                }
-            }
-        ]
+const actions = {
+    bar: function() {
+        console.log('bar')
+    },
+    about: function() {
+        console.log('about')
     }
-]
+}
+const mainMenuTemplate = require('./js/mainMenu.js')(app)
 
 // stuff for cloud beds
 /*
@@ -99,6 +86,7 @@ async function getJson() {
 }
 
 const https = require('https');
+const { abort } = require('process')
 // const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 
 const options = {
