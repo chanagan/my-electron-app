@@ -7,10 +7,10 @@ const btnFile = document.getElementById('fileBtn')
 
 const titleInput = document.getElementById('title')
 
-btncb.addEventListener('click', async () => {
+btnGetHA.addEventListener('click', async () => {
     console.log('getting JSON')
     const jsonResp = await window.electronAPI.getJSON()
-    console.log(jsonResp)
+    // console.log(jsonResp)
 
     const tblData = jsonResp.data
     const cbRes = document.getElementById('cb')

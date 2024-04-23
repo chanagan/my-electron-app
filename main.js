@@ -1,4 +1,6 @@
-const {app, BrowserWindow, dialog, ipcMain, Menu} = require('electron')   
+const {app, BrowserWindow, dialog, ipcMain, Menu} = require('electron')  
+const fetch = require('electron-fetch').default
+
 const path = require('path')   
 const fs = require('fs') 
 
@@ -81,6 +83,7 @@ async function getJson() {
     }
     const response = await dialog.showMessageBox(null, options)
     if (response.response === 0) {
+        jsonResp = await getPosts()
         return jsonResp
     }
 }
@@ -90,24 +93,38 @@ const { abort } = require('process')
 // const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 
 const options = {
-  hostname: 'hotels.cloudbeds.com',
-  // path: '/api/v1.1/getDashboard',
-  path: '/api/v1.1/getHouseAccountList',
-  // path: '/api/v1.1/getPaymentMethods',
-  method: 'GET',
-  headers: {
-    'x-api-key': 'cbat_06UfnnHdzSwoncUCh7ZOHkLiv02ZqUqc',
-  },
-};
+    hostname: 'hotels.cloudbeds.com',
+    // path: '/api/v1.1/getDashboard',
+    path: '/api/v1.1/getHouseAccountList',
+    // path: '/api/v1.1/getPaymentMethods',
+    method: 'GET',
+    headers: {
+      'x-api-key': 'cbat_06UfnnHdzSwoncUCh7ZOHkLiv02ZqUqc',
+    },
+  };
+
+  const optionsHA = {
+    method: 'GET',
+    headers: {
+      'x-api-key': 'cbat_06UfnnHdzSwoncUCh7ZOHkLiv02ZqUqc',
+    },
+  };
+    
+const cbServer = 'https://hotels.cloudbeds.com/api/v1.1/'
+const cbHseAcctLst = 'getHouseAccountList'
+
+fetch(cbServer + cbHseAcctLst, optionsHA)
+    .then(response => response.json())
+    .then(data =>  console.log(data))
+    .catch(error => console.error(error))
+
 
 const getPosts = () => {
-
-  
   const request = https.request(options, (response) => {
     response.setEncoding('utf8');
 
     response.on('data', (chunk) => {
-        console.log('------------------') 
+        console.log('------------------  ' + chunk.length)
       data += chunk;
     });
 
@@ -118,7 +135,8 @@ const getPosts = () => {
       objLength = Object(jsonResp.data).length;
       console.log(objLength)
       console.log(jsonResp.data[1].accountName)
-               });
+      win.webContents.send('json', jsonResp)
+    });
   });
 
   request.on('error', (error) => {
@@ -126,9 +144,9 @@ const getPosts = () => {
   });
 
   request.end();
-
+    return jsonResp;
    
 };
 
 
-getPosts();
+// getPosts();

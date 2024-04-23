@@ -13,5 +13,8 @@
   "devDependencies": {
     "electron": "^29.2.0",
     "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "electron-fetch": "^1.9.1"
   }
 }
