@@ -11,6 +11,9 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
+    <!-- <script type="javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <!-- <script type="module" src="./dispScripts.js"></script> -->
+   
     <title>Hello from Electron renderer!</title>
   </head>
   <body>
@@ -36,6 +39,6 @@
     <br/>
     <button type="button" id="fileBtn">Open a file</button>
 
-    <script src="./renderer.js"></script>
+    <script type="module" src="./renderer.js"></script>
   </body>
 </html>

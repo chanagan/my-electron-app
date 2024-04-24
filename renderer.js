@@ -1,3 +1,7 @@
+// const { ipcRenderer, ipcMain } = require("electron")
+// import { ipcRenderer } from "electron"
+import { displayData } from "./dispScripts.js"
+
 const information = document.getElementById('info')
 
 const setButton = document.getElementById('btn')
@@ -9,42 +13,12 @@ const titleInput = document.getElementById('title')
 
 btnGetHA.addEventListener('click', async () => {
     console.log('getting JSON')
-    const jsonResp = await window.electronAPI.getJSON()
+    // const jsonResp = 
+    await window.electronAPI.getJSON()
     // console.log(jsonResp)
-
-    const tblData = jsonResp.data
-    const cbRes = document.getElementById('cb')
-
-    // how many rows
-    const rowCnt = tblData.length
-    // how many columns
-    const colCnt = Object.keys(tblData[0]).length
-    console.log('rows: ' + rowCnt + ' -- ' + 'cols: ' + colCnt)
-
-    let newTable = "<table border='1'>"
-    // make the header row
-    newTable += "<tr>"
-    Object.keys(tblData[0]).forEach(key => {
-        newTable += `<th>${key}</th>`
-    })
-    newTable += '</tr>'
-
-    // fill in the rest of the table    
-    for (let i = 0; i < rowCnt; i++) {
-        newTable += '<tr>'
-    //     newTable += `<tr><td>${i}</td><td>${tblData[i].value}</td></tr>`
-        Object.keys(tblData[i]).forEach(key => {
-            newTable += `<td>${tblData[i][key]}</td>`
-            // console.log('tr row -> ' + key, jsonResp.data[i][key])
-        })
-        newTable += '</tr>'
-    }
-    
-    newTable += '</table>'
-
-    cbRes.innerHTML = newTable
-
 })
+
+
 
 btnFile.addEventListener('click', async () => {
     console.log('opening file')
@@ -61,4 +35,25 @@ information.innerText = `This app is using Chrome (v${versions.chrome()}),
     Node.js (v${versions.node()}), 
     and Electron (v${versions.electron()})`
 
+// ipcMain.on('cbGotData', (event, data) => {
+//     console.log(data)
+//     information.innerText = data
+// })
 
+/* ipcRenderer.on('json-reply', (event, arg) => {
+    console.log('got json-reply')
+      console.log(arg)
+      console.log('setting cbData')
+      cbData = arg
+      // titleInput.innerText = arg
+  })
+ */
+  window.addEventListener('message', (event) => {
+    console.log('got cbData')
+    console.log(event)
+    // console.log(arg)
+    displayData(event.data)
+    // console.log('setting cbData')
+    // cbData = event.detail
+    // titleInput.innerText = arg
+  })

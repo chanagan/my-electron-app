@@ -23,7 +23,8 @@ const createWindow = () => {
         x: 0,
         y: 0,
         webPreferences: {
-            nodeIntegration: true,
+            nodeIntegration: false,
+            contextIsolation: true,
             preload: path.join(__dirname, 'preload.js') 
         }
     })
@@ -37,7 +38,7 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
     ipcMain.handle('dialog:openFile', handleFileOpen)
-    ipcMain.handle('get-json', getJson)
+    // ipcMain.handle('get-json', getJson)
     createWindow()
 
     app.on('activate', () => {
@@ -103,20 +104,6 @@ const options = {
     },
   };
 
-  const optionsHA = {
-    method: 'GET',
-    headers: {
-      'x-api-key': 'cbat_06UfnnHdzSwoncUCh7ZOHkLiv02ZqUqc',
-    },
-  };
-    
-const cbServer = 'https://hotels.cloudbeds.com/api/v1.1/'
-const cbHseAcctLst = 'getHouseAccountList'
-
-fetch(cbServer + cbHseAcctLst, optionsHA)
-    .then(response => response.json())
-    .then(data =>  console.log(data))
-    .catch(error => console.error(error))
 
 
 const getPosts = () => {
@@ -134,8 +121,8 @@ const getPosts = () => {
       console.log(jsonResp.success)
       objLength = Object(jsonResp.data).length;
       console.log(objLength)
-      console.log(jsonResp.data[1].accountName)
-      win.webContents.send('json', jsonResp)
+    //   console.log(jsonResp.data[1].accountName)
+    //   win.webContents.send('json', jsonResp)
     });
   });
 
@@ -150,3 +137,31 @@ const getPosts = () => {
 
 
 // getPosts();
+
+
+
+const cbOptions = {
+    method: 'GET',
+    headers: {
+      'x-api-key': 'cbat_06UfnnHdzSwoncUCh7ZOHkLiv02ZqUqc',
+    },
+  };
+    
+const cbServer = 'https://hotels.cloudbeds.com/api/v1.1/'
+const cbApiCall = 'getHouseAccountList'
+// const cbApiCall = 'getDashboard'
+
+ipcMain.handle('get-json', ()  => {
+
+    fetch(cbServer + cbApiCall, cbOptions)
+    .then(response => response.json())
+    .then(data => { 
+        console.log('in get-json')
+        console.log(data)
+        // win.sendMessage('json-reply', data)
+        win.webContents.send('json-reply', data)
+        // return( data)
+    })
+    .catch(error => console.error(error))
+
+})
