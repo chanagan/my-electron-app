@@ -1,0 +1,82 @@
+accountcode,description,drcr,chargegroup,acctype,accgroup,defamount,incidental,accountstatus,taxrate1,taxrate2,taxrate3,taxrate4,taxrate5
+919,LMT - Scott Shambaugh,D,0,Charge,1,0,1,0,0,0,0,0,0
+934,Tee Natural - Vintage Guy (Sm),D,5,Charge,1,25,1,0,1,0,0,0,0
+935,Tee Natural - Vintage Guy (Md),D,5,Charge,1,25,1,0,1,0,0,0,0
+936,Tee Natural - Vintage Guy (Lg),D,5,Charge,1,25,1,0,1,0,0,0,0
+937,Tee Natural - Vintage Guy (XL),D,5,Charge,1,25,1,0,1,0,0,0,0
+960,Ride 2oz Silicone Lube,D,5,Charge,1,18,1,0,1,0,0,0,0
+962,Ride 4.2oz Waterbase Lube,D,5,Charge,1,14,1,0,1,0,0,0,0
+961,Ride 4.2oz Silicone Lube,D,5,Charge,1,27,1,0,1,0,0,0,0
+964,Ride 4.2oz Booty Buzz,D,5,Charge,1,28,1,0,1,0,0,0,0
+968,Ride 8.5oz Stroke Oil,D,5,Charge,1,24,1,0,1,0,0,0,0
+970,Ride1oz Delay Spray,D,5,Charge,1,12,1,0,1,0,0,0,0
+971,Ride1oz Stimulating Gel,D,5,Charge,1,18,1,0,1,0,0,0,0
+972,Ride1oz Beard Oil,D,5,Charge,1,18,1,0,1,0,0,0,0
+974,Ride 8.5oz Razor Shave,D,5,Charge,1,14,1,0,1,0,0,0,0
+963,Ride 4.2oz Silk (Cum) Lube,D,5,Charge,1,15,1,0,1,0,0,0,0
+959,Ride 2oz Silk (Cum) Lube,D,5,Charge,1,12,1,0,1,0,0,0,0
+965,Rocco 8.5oz Waterbased Lube,D,5,Charge,1,22,1,0,1,0,0,0,0
+967,Rocco 8.5oz Seed Hybrid Lube,D,5,Charge,1,25,1,0,1,0,0,0,0
+980,3D Printed Key Chain,D,5,Charge,1,8,1,0,1,0,0,0,0
+981,Coasters Stone 4pk,D,5,Charge,1,29,1,0,1,0,0,0,0
+982,Coasters Cork 4pk,D,5,Charge,1,15,1,0,1,0,0,0,0
+983,Wooden Keychain Engraved,D,5,Charge,1,10,1,0,1,0,0,0,0
+984,Flask Leather Engraved,D,5,Charge,1,39,1,0,1,0,0,0,0
+985,Luggage Tag Engraved,D,5,Charge,1,11,1,0,1,0,0,0,0
+986,Apron Navy/Leather,D,5,Charge,1,29,1,0,1,0,0,0,0
+987,Trucker Cap W/ Patches,D,5,Charge,1,23,1,0,1,0,0,0,0
+988,Canvas Field Bag W/ Patches,D,5,Charge,1,27,1,0,1,0,0,0,0
+989,Fanny Pack,D,5,Charge,1,21,1,0,1,0,0,0,0
+750,Tank Navy Ringer - Star (M),D,5,Charge,1,29,1,0,1,0,0,0,0
+751,Tank Navy Ringer - Star (L),D,5,Charge,1,29,1,0,1,0,0,0,0
+752,Tank Navy Ringer - Star (XL),D,5,Charge,1,29,1,0,1,0,0,0,0
+753,Tank Navy Ringer - Star (2XL),D,5,Charge,1,29,1,0,1,0,0,0,0
+854,Cuff Bracelet Leather Adjust,D,5,Charge,1,33,1,0,1,0,0,0,0
+844,3/4 Slv Gry/Blu (SM),D,5,Charge,1,31,1,0,1,0,0,0,0
+845,3/4 Slv Gry/Blu (MED),D,5,Charge,1,31,1,0,1,0,0,0,0
+846,3/4 Slv Gry/Blu (LG),D,5,Charge,1,31,1,0,1,0,0,0,0
+847,3/4 Slv Gry/Blu (XL),D,5,Charge,1,31,1,0,1,0,0,0,0
+754,Wooden Bottle Opener,D,5,Charge,1,11,1,0,1,0,0,0,0
+800,TUMBLER 20oz Includes Drink,D,5,Charge,1,25,1,0,1,0,0,0,0
+804,Grey Lightweight Hoodie - MED,D,5,Charge,1,39,1,0,1,0,0,0,0
+805,Grey Lightweight Hoodie - LG,D,5,Charge,1,39,1,0,1,0,0,0,0
+806,Grey Lightweight Hoodie - XL,D,5,Charge,1,39,1,0,1,0,0,0,0
+840,Tee Wht/Blue: Star Front (Sm),D,5,Charge,1,25,1,0,1,0,0,0,0
+841,Tee Wht/Blue: Star Front (Med),D,5,Charge,1,25,1,0,1,0,0,0,0
+842,Tee Wht/Blue: Star Front (LG),D,5,Charge,1,25,1,0,1,0,0,0,0
+843,Tee Wht/Blue: Star Front (XL),D,5,Charge,1,25,1,0,1,0,0,0,0
+850,HAT FITTED (S/M),D,5,Charge,1,36,1,0,1,0,0,0,0
+851,HAT FITTED (M/L),D,5,Charge,1,36,1,0,1,0,0,0,0
+852,HAT FITTED (L/XL),D,5,Charge,1,36,1,0,1,0,0,0,0
+853,Canvas/Leather Toiletry Bag,D,5,Charge,1,39,1,0,1,0,0,0,0
+855,Sarong Retail,D,5,Charge,1,20,1,0,1,0,0,0,0
+856,Sarong Guest-Discount,D,5,Charge,1,15,1,0,1,0,0,0,0
+860,Navy Triblend IH Pride - MED,D,5,Charge,1,33,1,0,1,0,0,0,0
+861,Navy Triblend IH Pride - LG,D,5,Charge,1,33,1,0,1,0,0,0,0
+862,Navy Triblend IH Pride - XL,D,5,Charge,1,33,1,0,1,0,0,0,0
+863,Navy Triblend IH Pride - 2XL,D,5,Charge,1,36,1,0,1,0,0,0,0
+865,Tee-Navy Vintage Logo SM,D,5,Charge,1,25,1,0,1,0,0,0,0
+866,Tee-Navy Vintage Logo MED,D,5,Charge,1,25,1,0,1,0,0,0,0
+867,Tee-Navy Vintage Logo LG,D,5,Charge,1,25,1,0,1,0,0,0,0
+868,Tee-Navy Vintage Logo XL,D,5,Charge,1,25,1,0,1,0,0,0,0
+869,Tee-Navy Vintage Logo 2XL,D,5,Charge,1,25,1,0,1,0,0,0,0
+910,FF 2023 Blk Ringer XS,D,5,Charge,1,33,1,0,1,0,0,0,0
+911,FF 2023 Blk Ringer SM,D,5,Charge,1,33,1,0,1,0,0,0,0
+912,FF 2023 Blk Ringer MED,D,5,Charge,1,33,1,0,1,0,0,0,0
+913,FF 2023 Blk Ringer LG,D,5,Charge,1,33,1,0,1,0,0,0,0
+914,FF 2023 Blk Ringer XL,D,5,Charge,1,33,1,0,1,0,0,0,0
+915,FF 2023 Blk Ringer 2XL,D,5,Charge,1,36,1,0,1,0,0,0,0
+916,Fetish Contest Entry,D,0,Charge,1,10,1,1,0,0,0,0,0
+920,LMT - Russ,D,0,Charge,1,140,1,0,0,0,0,0,0
+921,LMT - Greg Henke,D,0,Charge,1,140,1,0,0,0,0,0,0
+922,LMT - Scott Shambaugh,D,0,Charge,1,140,1,0,0,0,0,0,0
+923,LMT - David Meadors,D,0,Charge,1,140,1,0,0,0,0,0,0
+924,LMT - Terry Huff,D,0,Charge,1,120,1,0,0,0,0,0,0
+858,Navy Triblend IH Pride - XS,D,5,Charge,1,33,1,0,1,0,0,0,0
+859,Navy Triblend IH Pride - SM,D,5,Charge,1,33,1,0,1,0,0,0,0
+755,Blk Sleeveless Star Tee - SM,D,5,Charge,1,29,1,0,1,0,0,0,0
+756,Blk Sleeveless Star Tee - MED,D,5,Charge,1,29,1,0,1,0,0,0,0
+757,Blk Sleeveless Star Tee - LG,D,5,Charge,1,29,1,0,1,0,0,0,0
+758,Blk Sleeveless Star Tee - XL,D,5,Charge,1,29,1,0,1,0,0,0,0
+749,Tank Navy Ringer - Star (S),D,5,Charge,1,29,1,0,1,0,0,0,0
+799,Shared Bath Douche Attachment,D,5,Charge,1,19.5,1,0,1,0,0,0,0
