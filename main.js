@@ -96,7 +96,7 @@ const { abort } = require('process')
 const options = {
     hostname: 'hotels.cloudbeds.com',
     // path: '/api/v1.1/getDashboard',
-    path: '/api/v1.1/getHouseAccountList',
+    path: '/api/v1.2/getHouseAccountList',
     // path: '/api/v1.1/getPaymentMethods',
     method: 'GET',
     headers: {

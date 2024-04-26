@@ -50,6 +50,7 @@ information.innerText = `This app is using Chrome (v${versions.chrome()}),
  */
   window.addEventListener('message', (event) => {
     console.log('got cbData')
+    console.log('src: ' + event.data.src)
     console.log(event)
     // console.log(arg)
     displayData(event.data)
