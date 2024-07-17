@@ -100,7 +100,7 @@ const options = {
     // path: '/api/v1.1/getPaymentMethods',
     method: 'GET',
     headers: {
-      'x-api-key': 'cbat_06UfnnHdzSwoncUCh7ZOHkLiv02ZqUqc',
+      'x-api-key': 'cbat_AVYJ4dezriaScXdXY9WJrVyjHl5PxxY5',
     },
   };
 
@@ -143,13 +143,13 @@ const getPosts = () => {
 const cbOptions = {
     method: 'GET',
     headers: {
-      'x-api-key': 'cbat_06UfnnHdzSwoncUCh7ZOHkLiv02ZqUqc',
+      'x-api-key': 'cbat_AVYJ4dezriaScXdXY9WJrVyjHl5PxxY5',
     },
   };
     
-const cbServer = 'https://hotels.cloudbeds.com/api/v1.1/'
-const cbApiCall = 'getHouseAccountList'
-// const cbApiCall = 'getDashboard'
+const cbServer = 'https://hotels.cloudbeds.com/api/v1.2/'
+// const cbApiCall = 'getHouseAccountList'
+const cbApiCall = 'getDashboard'
 
 ipcMain.handle('get-json', ()  => {
 
