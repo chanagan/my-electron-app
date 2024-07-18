@@ -147,13 +147,23 @@ const cbOptions = {
     },
   };
     
+  const cbOptionsHA = {
+    method: 'GET',
+    headers: {
+      'x-api-key': 'cbat_AVYJ4dezriaScXdXY9WJrVyjHl5PxxY5',
+    },
+  };
+    
+
 const cbServer = 'https://hotels.cloudbeds.com/api/v1.2/'
+// const cbApiCall = 'getGuestList'
+const cbApiCall = 'getPayments?houseAccountID=558268'
 // const cbApiCall = 'getHouseAccountList'
-const cbApiCall = 'getDashboard'
+// const cbApiCall = 'getDashboard'
 
 ipcMain.handle('get-json', ()  => {
 
-    fetch(cbServer + cbApiCall, cbOptions)
+    fetch(cbServer + cbApiCall, cbOptionsHA)
     .then(response => response.json())
     .then(data => { 
         console.log('in get-json')
